@@ -1,2 +1,2 @@
 The max for the guessing game is printed onto the following line
-66
+50

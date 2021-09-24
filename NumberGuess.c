@@ -7,7 +7,7 @@ static int max;
 static int DEFAULT_MAX = 10;
 
 
-int getMax(){
+void getMax(){
     FILE *fileRead;
     char buff[255];
     int val;
@@ -15,8 +15,7 @@ int getMax(){
     fgets(buff, 255, (FILE*)fileRead);
     fgets(buff, 3, (FILE*)fileRead);
     fclose(fileRead);
-    val = atoi(buff);
-    return val;
+    max = atoi(buff);
 
 }
 /*
@@ -24,8 +23,7 @@ int getMax(){
 * to the number that was randomly selected.
 */
 int numberGuesser(){
-    max = getMax();
-    char input, output;
+    getMax();
     
     time_t t;
     int randomNumber, guess;
@@ -33,6 +31,7 @@ int numberGuesser(){
     srand((unsigned) time(&t));
     randomNumber = (rand() % max) + 1;
     printf("Number to guess is %d\n", randomNumber);
+    char input;
 
     while (guess != randomNumber)
     {
