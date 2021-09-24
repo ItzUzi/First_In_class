@@ -6,10 +6,39 @@ static int MAX_VALUE = 100;
 static int max = 10;
 
 /*
-* 
+* Program with number guessing, takes user input and compares it
+* to the number that was randomly selected.
 */
-void numberGuesser(){
+int numberGuesser(){
+    time_t t;
+    int randomNumber, guess;
+    int counter = 0;
+    srand((unsigned) time(&t));
+    randomNumber = (rand() % max) + 1;
+    printf("Number to guess is %d\n", randomNumber);
+    char input;
+
+    while (guess != randomNumber)
+    {
+        printf("Please guess a number from 1 - %d.\n", max);
+        printf("Or press q to quit\n");
+        scanf("%s", &input);
+        guess = atoi(&input);
+
+        if(input == 'q'){
+            return 0;
+        }
+        if (guess > randomNumber)
+            printf("Your guess is too high!\n");
+        if(guess < randomNumber)
+            printf("Your guess is too low!\n");
+        counter++;
+    }
+
+    printf("Nice you guessed right, the number was %d\n", randomNumber);
+    printf("It took you %d tries to guess the number\n", counter);
     
+    return 1;
 }
 
 /*
@@ -40,13 +69,14 @@ int main(int argc, char const *argv[])
 {
     int option;
     printf("Welcome to my number guesser\n");
-    printf("Press 1 to play a game\n");
-    printf("Press 2 to change the max number\n");
-    printf("Press 3 to quit\n");
 
     while (option != 3)
     {
         char input;
+        printf("Press 1 to play a game\n");
+        printf("Press 2 to change the max number\n");
+        printf("Press 3 to quit\n");
+        
         printf("Please enter either 1-3: ");
         scanf("%s", &input);
         printf("\n");
@@ -64,10 +94,7 @@ int main(int argc, char const *argv[])
             printf("\n\n\nPlease input a number between 1 - 3\n\n\n");
             
         }
-        
-        
     }
-    
     return 0; 
 }
 
