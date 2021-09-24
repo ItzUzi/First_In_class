@@ -2,12 +2,31 @@
 #include <stdlib.h>
 #include <time.h>
 
+static int MAX_VALUE = 100;
+static int randomValue = 10;
+
+void numberGuesser(){
+    
+}
+
+/*
+* Asks user to change 
+*/
+void changeNumber(){
+    int newMax;
+    char input;
+
+    printf("Please enter a new max value that is ");
+    printf("greater than 0 but less than %d\n", MAX_VALUE);
+
+
+}
+
 /*
 * Interactive number guessing game in which user
 * will guess number from 1-10 unless changed by user using 
 * the change method
 */
-
 int main(int argc, char const *argv[])
 {
     int option;
@@ -21,15 +40,24 @@ int main(int argc, char const *argv[])
         char input;
         printf("Please enter either 1-3: ");
         scanf("%s", &input);
+        printf("\n");
         option = atoi(&input);
-        if (option != 1 && option != 2 && option != 3)
+
+        if (option == 1){
+            numberGuesser();
+        } else if (option == 2){
+            changeNumber();
+        }else if (option == 3){
+
+        }else
         {
             printf("\n\n\nPlease input a number between 1 - 3\n\n\n");
-            continue;
+            
         }
-
-    
+        
+        
     }
     
     return 0; 
 }
+
