@@ -1,13 +1,30 @@
 #include <stdio.h>
+#include <time.h>
 
-int main(double *argv[])
+int main(int argc, double *argv[])
 {
-    
-    for (int i = 0; i < sizeof argv; i++)
+    double defaultPercentage = 0.10;
+    double *tax;
+    double *tip;
+    double *meal;
+
+    if(argc < 4){
+        *tax = defaultPercentage;
+        *tip = defaultPercentage;
+        *meal = 20.99;
+    }else
     {
-        double 
+        
+
     }
     
+
+
+    int counter = 1;
+    while(counter < argc){
+        printf("%s", argv[counter]);
+        counter++;
+    }
 
     return 0;
 }
