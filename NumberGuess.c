@@ -5,6 +5,9 @@
 static int MAX_VALUE = 100;
 static int max = 10;
 
+/*
+* 
+*/
 void numberGuesser(){
     
 }
@@ -19,16 +22,13 @@ void changeNumber(){
     printf("Please enter a new max value that is ");
     printf("greater than 0 but less than %d\n", MAX_VALUE);
     scanf("%s", &input);
-    if (atoi(&input) && atoi(&input) > 0 && atoi(&input) <= MAX_VALUE){
-        newMax = atoi(&input);
+    newMax = atoi(&input);
+    // Checks if newMax is within bounds
+    if (newMax > 0 && newMax <= MAX_VALUE){
         printf("New max is: %d\n", newMax);
         max = newMax;
     }else
         changeNumber();
-
-    
-    
-    
 }
 
 /*
