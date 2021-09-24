@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
     * initialized char array of length 4x10
     * to hold values of food items
     */
-    char meals[4][10];
-    strcpy(meals[0], "Salad");
-    strcpy(meals[1], "Soup");
-    strcpy(meals[2], "Sandwhich");
-    strcpy(meals[3], "Pizza");
+    char *meals[4];
+    meals[0] = "Salad";
+    meals[1] = "Soup";
+    meals[2] = "Sandwhich";
+    meals[3] = "Pizza";
 
     // initizialized double array to hold prices
     double prices[] = {9.95, 4.55, 13.25, 22.35};
@@ -47,9 +47,9 @@ int main(int argc, char *argv[])
     randomNumber = rand() % 4;
 
     // gave value from arrays to meal and price
-    char meal[1][10];
+    char *meal[1];
     double price = prices[randomNumber];
-    strcpy(meal[0], meals[randomNumber]);
+    meal[0] = meals[randomNumber];
 
     // Gets total prices of of meal
     double taxPrice = price + (price*tax);
