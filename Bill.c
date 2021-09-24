@@ -38,12 +38,17 @@ int main(int argc, char *argv[])
     // initizialized double array to hold prices
     double prices[] = {9.95, 4.55, 13.25, 22.35};
 
+    /*
+    * created instance of random
+    * gave a limit of 4 to how large the random
+    * number can be
+    */
     srand((unsigned) time(&t));
     randomNumber = rand() % 4;
-    
+
+    // gave value from arrays to meal and price
     char meal[1][10];
     double price = prices[randomNumber];
-
     strcpy(meal[0], meals[randomNumber]);
 
     // Gets total prices of of meal
