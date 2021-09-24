@@ -3,20 +3,36 @@
 #include <time.h>
 
 static int MAX_VALUE = 100;
-static int max = 10;
+static int max;
+static int DEFAULT_MAX = 10;
 
+
+int getMax(){
+    FILE *fileRead;
+    char buff[255];
+    int val;
+    fileRead = fopen("maxNumber.txt", "r");
+    fgets(buff, 255, (FILE*)fileRead);
+    fgets(buff, 3, (FILE*)fileRead);
+    fclose(fileRead);
+    val = atoi(buff);
+    return val;
+
+}
 /*
 * Program with number guessing, takes user input and compares it
 * to the number that was randomly selected.
 */
 int numberGuesser(){
+    max = getMax();
+    char input, output;
+    
     time_t t;
     int randomNumber, guess;
     int counter = 0;
     srand((unsigned) time(&t));
     randomNumber = (rand() % max) + 1;
     printf("Number to guess is %d\n", randomNumber);
-    char input;
 
     while (guess != randomNumber)
     {
@@ -45,6 +61,7 @@ int numberGuesser(){
 * Asks user to change max limit of guessing number game.
 */
 void changeNumber(){
+    FILE *fileWrite;
     int newMax = -1;
     char input;
 
@@ -56,6 +73,11 @@ void changeNumber(){
     if (newMax > 0 && newMax <= MAX_VALUE){
         printf("New max is: %d\n", newMax);
         max = newMax;
+        fileWrite = fopen("maxNumber.txt", "w");
+        fprintf(fileWrite, "The max for the guessing game is printed onto the following line\n");
+        fprintf(fileWrite, "%d\n", max);
+        fclose(fileWrite);
+
     }else
         changeNumber();
 }
