@@ -3,23 +3,32 @@
 #include <time.h>
 
 static int MAX_VALUE = 100;
-static int randomValue = 10;
+static int max = 10;
 
 void numberGuesser(){
     
 }
 
 /*
-* Asks user to change 
+* Asks user to change max limit of guessing number game.
 */
 void changeNumber(){
-    int newMax;
+    int newMax = -1;
     char input;
 
     printf("Please enter a new max value that is ");
     printf("greater than 0 but less than %d\n", MAX_VALUE);
+    scanf("%s", &input);
+    if (atoi(&input) && atoi(&input) > 0 && atoi(&input) <= MAX_VALUE){
+        newMax = atoi(&input);
+        printf("New max is: %d\n", newMax);
+        max = newMax;
+    }else
+        changeNumber();
 
-
+    
+    
+    
 }
 
 /*
@@ -48,7 +57,8 @@ int main(int argc, char const *argv[])
         } else if (option == 2){
             changeNumber();
         }else if (option == 3){
-
+            printf("Thank you for playing!\n");
+            printf("GoodBye!!!");
         }else
         {
             printf("\n\n\nPlease input a number between 1 - 3\n\n\n");
