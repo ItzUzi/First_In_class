@@ -3,6 +3,12 @@
 #include <string.h>
 #include <time.h>
 
+/*
+* This program will calculate a restaurant bill from 
+* a random choice of meals/prices and user inputted
+* tax and tip percent from the command line. 
+*/
+
 int main(int argc, char *argv[])
 {
     double defaultPercentage = 0.10;
