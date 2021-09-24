@@ -8,6 +8,8 @@ int main(int argc, char *argv[])
     double defaultPercentage = 0.10;
     double tax;
     double tip;
+    time_t t;
+    int randomNumber;
 
     /*
     * If there are not 3 arguments in command line (exluding string call)
@@ -35,11 +37,14 @@ int main(int argc, char *argv[])
 
     // initizialized double array to hold prices
     double prices[] = {9.95, 4.55, 13.25, 22.35};
+
+    srand((unsigned) time(&t));
+    randomNumber = rand() % 4;
     
     char meal[1][10];
-    double price = prices[0];
+    double price = prices[randomNumber];
 
-    strcpy(meal[0], meals[0]);
+    strcpy(meal[0], meals[randomNumber]);
 
     // Gets total prices of of meal
     double taxPrice = price + (price*tax);
