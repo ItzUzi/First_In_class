@@ -15,9 +15,13 @@ int numberGuesser(){
     int counter = 0;
     srand((unsigned) time(&t));
     randomNumber = (rand() % max) + 1;
-    printf("Number to guess is %d\n", randomNumber);
+    // printf("Number to guess is %d\n", randomNumber);
     char input;
 
+    /**
+     * Keeps looping until user guesses the random number or 
+     * selects q to quit the loop.
+    */
     while (guess != randomNumber)
     {
         printf("Please guess a number from 1 - %d.\n", max);
@@ -54,7 +58,7 @@ void changeNumber(){
     newMax = atoi(&input);
     // Checks if newMax is within bounds
     if (newMax > 0 && newMax <= MAX_VALUE){
-        printf("New max is: %d\n", newMax);
+        printf("\n\nNew max is: %d\n\n", newMax);
         max = newMax;
     }else
         changeNumber();
@@ -68,7 +72,7 @@ void changeNumber(){
 int main(int argc, char const *argv[])
 {
     int option;
-    printf("Welcome to my number guesser\n");
+    printf("\n\n\nWelcome to my number guesser\n");
 
     while (option != 3)
     {
