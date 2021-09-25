@@ -5,28 +5,11 @@
 static int MAX_VALUE = 100;
 static int max = 10;
 
-/** 
- * Gets the max from the file, if the max isnt written on the file
- * program will quit
- */
-void getMax(){
-    FILE *fileRead;
-    char buff[255];
-    int val;
-    fileRead = fopen("maxNumber.txt", "r");
-    fgets(buff, 255, (FILE*)fileRead);
-    fgets(buff, 3, (FILE*)fileRead);
-    fclose(fileRead);
-    max = atoi(buff);
-
-}
 /*
 * Program with number guessing, takes user input and compares it
 * to the number that was randomly selected.
 */
 int numberGuesser(){
-    getMax();
-    
     time_t t;
     int randomNumber, guess;
     int counter = 0;
@@ -78,11 +61,6 @@ void changeNumber(){
     if (newMax > 0 && newMax <= MAX_VALUE){
         printf("\n\nNew max is: %d\n\n", newMax);
         max = newMax;
-        fileWrite = fopen("maxNumber.txt", "w");
-        fprintf(fileWrite, "The max for the guessing game is printed onto the following line\n");
-        fprintf(fileWrite, "%d\n", max);
-        fclose(fileWrite);
-
     }else
         changeNumber();
 }
