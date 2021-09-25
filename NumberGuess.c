@@ -8,7 +8,7 @@ static int DEFAULT_MAX = 10;
 
 /** 
  * Gets the max from the file, if the max isnt written on the file
- * uses default value.
+ * program will quit
  */
 void getMax(){
     FILE *fileRead;
@@ -19,11 +19,6 @@ void getMax(){
     fgets(buff, 3, (FILE*)fileRead);
     fclose(fileRead);
     max = atoi(buff);
-
-    if (max < 0 || max > MAX_VALUE){
-        max = DEFAULT_MAX;
-    }
-    
 
 }
 /*
@@ -38,7 +33,7 @@ int numberGuesser(){
     int counter = 0;
     srand((unsigned) time(&t));
     randomNumber = (rand() % max) + 1;
-    printf("Number to guess is %d\n", randomNumber);
+    // printf("Number to guess is %d\n", randomNumber);
     char input;
 
     /*
