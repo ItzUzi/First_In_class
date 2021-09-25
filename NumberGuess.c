@@ -3,7 +3,7 @@
 #include <time.h>
 
 static int MAX_VALUE = 100;
-static int max;
+static int max = 10;
 
 /** 
  * Gets the max from the file, if the max isnt written on the file
