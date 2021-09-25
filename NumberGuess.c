@@ -76,7 +76,7 @@ void changeNumber(){
     newMax = atoi(&input);
     // Checks if newMax is within bounds
     if (newMax > 0 && newMax <= MAX_VALUE){
-        printf("New max is: %d\n", newMax);
+        printf("\nNew max is: %d\n\n", newMax);
         max = newMax;
         fileWrite = fopen("maxNumber.txt", "w");
         fprintf(fileWrite, "The max for the guessing game is printed onto the following line\n");
@@ -95,7 +95,7 @@ void changeNumber(){
 int main(int argc, char const *argv[])
 {
     int option;
-    printf("Welcome to my number guesser\n");
+    printf("\n\nWelcome to my number guesser\n");
 
     while (option != 3)
     {
