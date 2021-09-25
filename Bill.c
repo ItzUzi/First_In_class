@@ -61,6 +61,9 @@ int main(int argc, char *argv[])
     double taxPrice = price + (price*tax);
     double totalPrice = taxPrice + (taxPrice*tip);
 
+    tax *= 100;
+    tip *= 100;
+
     printf("The %s is priced at: $%.2f\n", meal[0], price);
     printf("Tax is: %.2f%%\n", tax);
     printf("Tip is: %.2f%%\n", tip);
