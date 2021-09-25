@@ -35,9 +35,12 @@ int numberGuesser(){
     // printf("Number to guess is %d\n", randomNumber);
     char input;
 
-    /*
-    * While the guesses arent right, keep user guessing unless they
-    * select 'q'
+<<<<<<< HEAD
+=======
+    /**
+     * Keeps looping until user guesses the random number or 
+     * selects q to quit the loop.
+>>>>>>> numberGuessNoSave
     */
     while (guess != randomNumber)
     {
@@ -76,7 +79,7 @@ void changeNumber(){
     newMax = atoi(&input);
     // Checks if newMax is within bounds
     if (newMax > 0 && newMax <= MAX_VALUE){
-        printf("\nNew max is: %d\n\n", newMax);
+        printf("\n\nNew max is: %d\n\n", newMax);
         max = newMax;
         fileWrite = fopen("maxNumber.txt", "w");
         fprintf(fileWrite, "The max for the guessing game is printed onto the following line\n");
@@ -95,7 +98,10 @@ void changeNumber(){
 int main(int argc, char const *argv[])
 {
     int option;
-    printf("\n\nWelcome to my number guesser\n");
+<<<<<<< HEAD
+=======
+    printf("\n\n\nWelcome to my number guesser\n");
+>>>>>>> numberGuessNoSave
 
     while (option != 3)
     {
