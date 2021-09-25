@@ -35,12 +35,9 @@ int numberGuesser(){
     // printf("Number to guess is %d\n", randomNumber);
     char input;
 
-<<<<<<< HEAD
-=======
     /**
      * Keeps looping until user guesses the random number or 
      * selects q to quit the loop.
->>>>>>> numberGuessNoSave
     */
     while (guess != randomNumber)
     {
@@ -98,10 +95,7 @@ void changeNumber(){
 int main(int argc, char const *argv[])
 {
     int option;
-<<<<<<< HEAD
-=======
     printf("\n\n\nWelcome to my number guesser\n");
->>>>>>> numberGuessNoSave
 
     while (option != 3)
     {
